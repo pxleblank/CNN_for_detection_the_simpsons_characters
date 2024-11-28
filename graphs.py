@@ -1,5 +1,6 @@
 from imports import *
 
+
 def show_graphs(directory=None):
     plt.plot(train_loss)
     plt.plot(val_loss)
@@ -19,30 +20,6 @@ def show_graphs(directory=None):
 
     plt.plot(lr_list)
     plt.legend(['learning_rate'])
-    plt.show()
-
-    # Creating precision graphs for each class
-    plt.figure(figsize=(15, 8))
-    for class_idx in range(num_classes):
-        precision_values = [epoch[class_idx] for epoch in val_precision_per_epoch]
-        plt.plot(range(1, epochs + 1), precision_values, label=f'Class {class_idx}')
-    plt.xlabel("Epoch")
-    plt.ylabel("Precision")
-    plt.title("Precision for each class")
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-    plt.tight_layout()
-    plt.show()
-
-    # Creating recall graphs for each class
-    plt.figure(figsize=(15, 8))
-    for class_idx in range(num_classes):
-        recall_values = [epoch[class_idx] for epoch in val_recall_per_epoch]
-        plt.plot(range(1, epochs + 1), recall_values, label=f'Class {class_idx}')
-    plt.xlabel("Epoch")
-    plt.ylabel("Recall")
-    plt.title("Recall for each class")
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-    plt.tight_layout()
     plt.show()
 
     # bar plot for precision

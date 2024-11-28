@@ -12,6 +12,7 @@ import torch.optim as optim
 from torchsummary import summary
 from torch.utils.data.sampler import SubsetRandomSampler
 import torchvision.datasets as datasets
+from torchvision.models import resnet50, ResNet50_Weights
 
 from yaml_reader import yaml_reader
 

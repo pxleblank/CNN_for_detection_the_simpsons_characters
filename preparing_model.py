@@ -3,7 +3,8 @@ from model import ModelVGG11BN, ResNet
 
 
 def model_create():
-    model = ModelVGG11BN(num_classes)  # Create our CNN model.
+    # model = ModelVGG11BN(num_classes)  # Create our CNN model.
+    model = resnet50(weights=ResNet50_Weights.DEFAULT)  # Create our CNN model.
     # model = ResNet(num_classes)  # Create our CNN model.
     model.to(device)  # Transfer it to device.
     loss_func = nn.CrossEntropyLoss()
